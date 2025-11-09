@@ -1,0 +1,8 @@
+
+cd C:\Users\Vika\Documents\553501\OAiP\LR5
+g++ -o build/test_task2.exe task2/tests/test_task2.cpp build/gtest-all.o build/gtest_main.o -Itask2/include -Igoogletest/googletest/include -Igoogletest/googletest -Lbuild -lRecDLL_task2 -static-libgcc -static-libstdc++ -mconsole
+cd build
+test_task2.exe
+
+
+

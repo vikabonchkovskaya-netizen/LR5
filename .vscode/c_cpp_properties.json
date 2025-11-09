@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/task3/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/task1/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/task2/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/task4/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/task5/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/googletest-release-1.7.0/include",
+                "C:/Users/Vika/Documents/553501/OAiP/LR5/googletest/googletest/include"
+            ],
+            "defines": [],
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}

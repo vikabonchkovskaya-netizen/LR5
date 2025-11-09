@@ -1,0 +1,111 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build RecDLL (All Tasks)",
+            "type": "shell",
+            "command": "for %i in (1 2 3 4 5) do g++ -shared -o build/RecDLL_task%i.dll task%i/src/RecDLL.cpp -Itask%i/include -DMINLIBRARY_EXPORTS -Wl,--out-implib,build/libRecDLL_task%i.a",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build MatrixDLL (All Tasks)",
+            "type": "shell",
+            "command": "for %i in (1 2 3 4 5) do g++ -shared -o build/MatrixDLL_task%i.dll task%i/src/MatrixDLL.cpp -Itask%i/include -DMINLIBRARY_EXPORTS -Wl,--out-implib,build/libMatrixDLL_task%i.a",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Tests (All Tasks)",
+            "type": "shell",
+            "command": "for %i in (1 2 3 4 5) do if exist task%i\\tests\\test_task%i.cpp g++ -o build/test_task%i.exe task%i/tests/test_task%i.cpp build/gtest-all.o -Itask%i/include -Igoogletest/googletest/include -Igoogletest/googletest -Lbuild -lRecDLL_task%i -static-libgcc -static-libstdc++ -mconsole",
+            "dependsOn": [
+                "Build RecDLL (All Tasks)",
+                "Build MatrixDLL (All Tasks)"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run test_task1",
+            "type": "shell",
+            "command": "cd build && test_task1.exe",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run test_task2",
+            "type": "shell",
+            "command": "cd build && test_task2.exe",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run test_task3",
+            "type": "shell",
+            "command": "cd build && test_task3.exe",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run test_task4",
+            "type": "shell",
+            "command": "cd build && test_task4.exe",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run test_task5",
+            "type": "shell",
+            "command": "cd build && test_task5.exe",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe сборка активного файла",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Задача создана отладчиком."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe сборка активного файла",
+            "command": "C:/msys64/mingw64/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/msys64/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.14)
+project(LR5 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+enable_testing()
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+# Динамическая библиотека
+add_library(matrixdll SHARED
+    src/MatrixDLL.cpp
+)
+
+target_include_directories(matrixdll PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+# Тесты
+add_executable(tests
+    tests/test_task4.cpp
+)
+
+target_link_libraries(tests PRIVATE matrixdll gtest_main)
+
+add_test(NAME MatrixTests COMMAND tests)

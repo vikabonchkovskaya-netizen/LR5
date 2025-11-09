@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/b57a0d1c36b5407af67466a7d9bd1ee2/googletest-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/cd51afda4e4bf507261b2140b67a91a3/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Vika/Documents/553501/OAiP/LR5/build/_deps/googletest-subbuild/CMakeFiles/f6aaa6eafb6c71581441bece6a12d589/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

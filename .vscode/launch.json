@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+{
+    "label": "build_gtest",
+    "type": "shell",
+    "command": "g++ -c -o build/gtest-all.o googletest-release-1.7.0/src/gtest-all.cc -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0",
+    "group": "build"
+},
+        {
+            "label": "build_dll_task1", 
+            "type": "shell",
+            "command": "g++ -shared -o build/MatrixDLL_task1.dll task1/src/*.cpp -Itask1/include -static-libgcc -static-libstdc++"
+        },
+        {
+            "label": "build_dll_task2", 
+            "type": "shell",
+            "command": "g++ -shared -o build/RecDLL_task2.dll task2/src/*.cpp -Itask2/include -static-libgcc -static-libstdc++"
+        },
+        {
+            "label": "build_dll_task3",
+            "type": "shell",
+            "command": "g++ -shared -o build/MatrixDLL_task3.dll task3/src/*.cpp -Itask3/include -static-libgcc -static-libstdc++"
+        },
+        {
+            "label": "build_dll_task4",
+            "type": "shell", 
+            "command": "g++ -shared -o build/MatrixDLL_task4.dll task4/src/*.cpp -Itask4/include -static-libgcc -static-libstdc++"
+        },
+        {
+            "label": "build_dll_task5",
+            "type": "shell",
+            "command": "g++ -shared -o build/MatrixDLL_task5.dll task5/src/*.cpp -Itask5/include -static-libgcc -static-libstdc++"
+        },
+        {
+    "label": "build_test_task1",
+    "type": "shell",
+    "command": "g++ -o build/test_task1.exe task1/tests/test_task1.cpp build/gtest-all.o -Itask1/include -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0 -Lbuild -lMatrixDLL_task1 -static-libgcc -static-libstdc++ -mconsole",
+    "dependsOn": ["build_gtest", "build_dll_task1"]
+},
+        {
+            "label": "build_test_task2",
+            "type": "shell",
+            "command": "g++ -o build/test_task2.exe task2/tests/test_task2.cpp build/gtest-all.o -Itask2/include -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0' -Lbuild -lRecDLL_task2 -static-libgcc -static-libstdc++ -mconsole",
+            "dependsOn": ["build_gtest", "build_dll_task2"]
+        },
+        {
+            "label": "build_test_task3",
+            "type": "shell",
+            "command": "g++ -o build/test_task3.exe task3/tests/test_task3.cpp build/gtest-all.o -Itask3/include -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0 -Lbuild -lMatrixDLL_task3 -static-libgcc -static-libstdc++ -mconsole",
+            "dependsOn": ["build_gtest", "build_dll_task3"]
+        },
+          {
+            "label": "build_test_task4",
+            "type": "shell",
+            "command": "g++ -o build/test_task4.exe task4/tests/test_task4.cpp build/gtest-all.o -Itask4/include -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0 -Lbuild -lMatrixDLL_task4 -static-libgcc -static-libstdc++ -mconsole",
+            "dependsOn": ["build_gtest", "build_dll_task4"]
+        },
+        {
+            "label": "build_test_task5",
+            "type": "shell",
+            "command": "g++ -o build/test_task5.exe task5/tests/test_task5.cpp build/gtest-all.o -Itask5/include -Igoogletest-release-1.7.0/include -Igoogletest-release-1.7.0 -Lbuild -lMatrixDLL_task5 -static-libgcc -static-libstdc++ -mconsole",
+            "dependsOn": ["build_gtest", "build_dll_task5"]
+        }
+    ]
+} 
