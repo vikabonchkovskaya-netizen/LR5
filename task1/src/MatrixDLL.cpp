@@ -1,12 +1,10 @@
-#include "MatrixDLL.h"
+#include "../include/MatrixDLL.h"
 #include <stdexcept>
-
-namespace matrixdll {
 
 double findMaxElement(double* X, int n, double* Y, int m)
 {
     if (n <= 0 || m <= 0)
-        throw std::invalid_argument("Размеры массивов должны быть положительными");
+        throw std::invalid_argument("Razmery massivov dolzhny byt polozhitelnimi");
 
     double maxVal = X[0] * Y[0];
     for (int i = 0; i < n; i++)
@@ -20,5 +18,3 @@ double findMaxElement(double* X, int n, double* Y, int m)
     }
     return maxVal;
 }
-
-} 

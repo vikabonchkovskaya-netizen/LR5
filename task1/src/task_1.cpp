@@ -1,10 +1,8 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <windows.h>  // для LoadLibrary, GetProcAddress, FreeLibrary
-#include "MatrixDLL.h"
+#include "../include/MatrixDLL.h"
 using namespace std;
-using namespace matrixdll;
 
 void checkInputChoice(int& choice) {
     while (true) {
@@ -76,18 +74,16 @@ void Task() {
         cout << "Y[" << j + 1 << "]: ";
         checkInputArray(Y[j]);
     }
-
-    double maxZ = findMaxElement(X, n, Y, m);
+ double maxZ = findMaxElement(X, n, Y, m);
     cout << "\nНаибольший элемент матрицы Z = Xi * Yj: " << maxZ << endl;
-
     delete[] X;
     delete[] Y;
-}
+    }
 
 void Menu() {
     cout << "\tTask 1" << endl;
     cout << "\tVariant 5" << endl << endl;
-    cout << "Составить программу для нахождения наибольшего элемента матрицы Z = Xi * Yj." << endl;
+    cout << "Sostavit programy dla naxozdeniya naibolchego elementa massivaZ = Xi * Yj." << endl;
     cout << "Creator: Viktoriya Bonchkovskaya" << endl << endl;
 }
 

@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
-#include "MatrixDLL.h"
+#include "../include/MatrixDLL.h"
 #include <stdexcept>
-using namespace matrixdll;
 
 // Базовый тест — нормальные данные
 TEST(MatrixDLL_Basic, PositiveValues) {
