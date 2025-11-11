@@ -6,3 +6,6 @@ test_task2.exe
 
 
 
+cd task2
+g++ -shared -Iinclude -o build/RecDLL.dll src/RecDLL.cpp
+g++ -Iinclude -o build/task_2 src/task_2.cpp

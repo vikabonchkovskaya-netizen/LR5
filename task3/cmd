@@ -2,7 +2,6 @@ g++ -std=c++17 -o build/test_task3.exe task3/tests/test_task3.cpp build/gtest-al
 cd build
 test_task3.exe
 
-g++ -std=c++17 -o build/test_task4.exe task4/tests/test_task4.cpp build/gtest-all.o -Itask4/include -I"C:/Users/Vika/Documents/553501/OAiP/LR5/googletest-release-1.7.0/include" -Lbuild -lMatrixDLL_task4 -static-libgcc -static-libstdc++ -mconsole
-cd build
-test_task4.exe
-
+cd task3
+g++ -shared -Iinclude -o build/MatrixDLL.dll src/MatrixDLL.cpp
+g++ -Iinclude -o build/task_3 src/task_3.cpp

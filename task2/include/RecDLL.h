@@ -1,13 +1,19 @@
-#ifdef RECDLL_EXPORTS
-#define RECDLL_API __declspec(dllexport)
-#else
-#define RECDLL_API __declspec(dllimport)
-#endif
+#ifndef LR5_RECDLL_H
+#define LR5_RECDLL_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 extern "C" {
     // Функция возвращает индекс минимального элемента массива
-    RECDLL_API int findMinRecursive(const int* arr, int left, int right);
+    int __stdcall findMinRecursive(const int* arr, int left, int right);
 
     // Функция возвращает минимальное значение массива
-    RECDLL_API int getMinValue(const int* arr, int left, int right);
+    int __stdcall getMinValue(const int* arr, int left, int right);
 }
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif //LR5_RECDLL_H

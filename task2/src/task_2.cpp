@@ -47,7 +47,7 @@ void checkInputIntK(int& k) {
     }
 }
 
-void checkInputArray(double& x) {
+void checkInputArray(int& x) {
     while (true) {
         std::string line;
         if (!std::getline(std::cin, line)) {
@@ -73,14 +73,17 @@ if (load == nullptr) {
 }
 
     // 2. ОБЪЯВЛЯЕМ ТИПЫ УКАЗАТЕЛЕЙ НА ФУНКЦИИ ИЗ DLL
-    typedef double (__stdcall *RecFunc)(double[], int, int);
+    typedef int (__stdcall *Min)(const int* arr, int left, int right);
+
 
     // 3. ПОЛУЧАЕМ УКАЗАТЕЛИ НА ФУНКЦИИ ИЗ DLL
-    RecFunc pRecFunc;
-    pRecFunc = (RecFunc)GetProcAddress(load, "recFunc");
+    Min pfindMinRecursive;
+   Min pgetMinValue;
+    pfindMinRecursive = (Min)GetProcAddress(load, "findMinRecursive");
+    pgetMinValue = (Min)GetProcAddress(load, "getMinValue");
 
     // Проверяем, что все функции найдены
-    if (pRecFunc == nullptr) {
+    if (pfindMinRecursive == nullptr || pgetMinValue == nullptr ) {
         std::cout << "Error: Could not find functions in the library!" << std::endl;
         FreeLibrary(load);
         return;
@@ -89,12 +92,17 @@ if (load == nullptr) {
     int n;
     std::cout << "Enter amount of massive: ";
     checkInputIntK(n);
-    double* arr = new double[n];
+    int* arr = new int[n];
     for (int i = 0; i < n; i++) {
         std::cout << "Enter a" << i << ": ";
         checkInputArray(arr[i]);
     }
-    std::cout << pRecFunc(arr, 0, n - 1) << std::endl;
+   // Вызов первой функции
+std::cout << "Recursive result: " << pfindMinRecursive(arr, 0, n - 1) << std::endl;
+
+// ВЫЗОВ ВТОРОЙ ФУНКЦИИ
+std::cout << "Min value result: " << pgetMinValue(arr, 0, n - 1) << std::endl;
+
 
     // 5. ВЫГРУЖАЕМ БИБЛИОТЕКУ ИЗ ПАМЯТИ
     FreeLibrary(load);

@@ -55,27 +55,27 @@ void checkInputArray(double& value){
 void Task() {
     int n, m;
 
-    cout << "Введите количество элементов массива X: ";
+    cout << "Vvedite kolichestvo elementov massiva X: ";
     checkInputIntK(n);
-    cout << "Введите количество элементов массива Y: ";
+    cout << "Vvedite kolichestvo elementov massiva Y: ";
     checkInputIntK(m);
 
     double* X = new double[n];
     double* Y = new double[m];
 
-    cout << "Введите элементы массива X:" << endl;
+    cout << "Vvedite elementi massiva X:" << endl;
     for (int i = 0; i < n; i++) {
         cout << "X[" << i + 1 << "]: ";
         checkInputArray(X[i]);
     }
 
-    cout << "Введите элементы массива Y:" << endl;
+    cout << "Vvedite elementi massiva Y:" << endl;
     for (int j = 0; j < m; j++) {
         cout << "Y[" << j + 1 << "]: ";
         checkInputArray(Y[j]);
     }
  double maxZ = findMaxElement(X, n, Y, m);
-    cout << "\nНаибольший элемент матрицы Z = Xi * Yj: " << maxZ << endl;
+    cout << "\nNaibolshyu element massiva  Z = Xi * Yj: " << maxZ << endl;
     delete[] X;
     delete[] Y;
     }

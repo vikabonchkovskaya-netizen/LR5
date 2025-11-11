@@ -1,3 +1,6 @@
 cd C:\Users\Vika\Documents\553501\OAiP\LR5\task1\tests
 test_task1.exe
 
+cd task1
+g++ -shared -Iinclude -o build/MatrixDLL.dll src/MatrixDLL.cpp
+g++ -Iinclude -o build/task1 src/task1.cpp
